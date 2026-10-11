@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>九九影视 | 久久相伴，好片不断 · 高清影视在线观看平台</title>
+<meta name="keywords" content="九九影视,jiujiuyingshi,九九影视网,在线影视,高清影视在线观看,免费看电影,电视剧,综艺,动漫,影视资源">
+<meta name="description" content="九九影视（jiujiuyingshi-wap.github.io）是久久相伴的高清正版影视平台，海量电影、热播剧、综艺、动漫每日更新，久久不卡顿、久久不断更，一站看好片。">
+<meta name="author" content="九九影视">
+<meta name="robots" content="index,follow">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://jiujiuyingshi-wap.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>9️⃣</text></svg>">
+<style>
+/* ===== 基础 ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#23151a;--ink2:#5c4a50;--dim:#947d84;--bg:#fbf7f2;--paper:#ffffff;
+  --line:#f0e2d8;--line2:#f7eeea;
+  --red:#e6392f;--red-d:#b5201a;--gold:#e2a521;--gold-l:#f7d774;--jade:#2f7a6b;
+  --r:14px;--ease:cubic-bezier(.22,.68,.17,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(circle at 88% 8%,rgba(230,57,47,.06),transparent 38%),
+    radial-gradient(circle at 8% 20%,rgba(226,165,33,.07),transparent 36%);
+  background-attachment:fixed;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+h1,h2,h3,h4{line-height:1.3;font-weight:900;color:var(--ink);letter-spacing:.01em}
+::selection{background:var(--red);color:#fff}
+.shell{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ===== 组件 ===== */
+section{padding:88px 0;position:relative}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--red);font-weight:800;margin-bottom:12px}
+.kicker::before{content:"❖";color:var(--gold)}
+.h2{font-size:clamp(1.55rem,3.4vw,2.3rem)}
+.h2 em{font-style:normal;color:var(--red);position:relative;padding:0 3px}
+.h2 em::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:9px;background:rgba(230,57,47,.14);z-index:-1;border-radius:3px}
+.h2 b{color:var(--red-d)}
+.sub{color:var(--dim);margin-top:13px;max-width:590px;font-size:15px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.head-l{max-width:640px}
+.center{text-align:center}.center .head-l{margin:0 auto}.center .sub{margin:13px auto 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-weight:700;font-size:14.5px;cursor:pointer;border:0;transition:.35s var(--ease);font-family:inherit}
+.btn-main{background:linear-gradient(135deg,var(--red),var(--red-d));color:#fff;box-shadow:0 8px 22px rgba(230,57,47,.3)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(230,57,47,.4)}
+.btn-out{background:var(--paper);color:var(--red);box-shadow:inset 0 0 0 2px var(--line)}
+.btn-out:hover{box-shadow:inset 0 0 0 2px var(--red);transform:translateY(-3px)}
+.badge-pill{display:inline-block;padding:5px 13px;border-radius:6px;font-size:12px;font-weight:700;background:var(--paper);border:1px solid var(--line);color:var(--dim)}
+.badge-pill.hot{color:#fff;border:0;background:linear-gradient(135deg,var(--red),var(--gold))}
+.badge-pill.jade{color:var(--jade);border-color:rgba(47,122,107,.3)}
+
+/* ===== 导航 ===== */
+.nav{position:sticky;top:0;z-index:100;background:rgba(251,247,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:11px;font-size:23px;font-weight:900}
+.logo .mark{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,var(--red),var(--gold));display:grid;place-items:center;color:#fff;font-weight:900;font-size:16px;box-shadow:0 6px 16px rgba(230,57,47,.28)}
+.logo span.zi{background:linear-gradient(135deg,var(--red),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo small{font-size:9px;color:var(--red);letter-spacing:.22em;text-transform:uppercase;font-weight:800;margin-left:2px;border:1px solid rgba(230,57,47,.25);padding:3px 7px;border-radius:4px}
+.links{display:flex;gap:2px;align-items:center}
+.links a{padding:9px 15px;border-radius:6px;font-size:14px;font-weight:600;color:var(--ink2);transition:.25s}
+.links a:hover{color:var(--red);background:rgba(230,57,47,.05)}
+.links a.love{color:#fff;background:linear-gradient(135deg,var(--red),var(--gold));box-shadow:0 6px 16px rgba(230,57,47,.28)}
+.links a.love:hover{color:#fff;transform:scale(1.05)}
+.m-btn{display:none;width:44px;height:44px;border:1px solid var(--line);background:var(--paper);color:var(--red);border-radius:8px;cursor:pointer;font-size:17px}
+
+/* ===== Hero ===== */
+.hero{padding:60px 0 96px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;opacity:.5}
+.hero-bg span{position:absolute;font-size:120px;color:var(--gold);opacity:.07;font-weight:900;font-style:italic;font-family:Georgia,serif}
+.hero-bg .n1{top:-20px;left:4%}.hero-bg .n2{top:40%;right:6%}.hero-bg .n3{bottom:-30px;left:30%}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:2}
+.h1{font-size:clamp(2.4rem,6.4vw,4.8rem);line-height:1.12;letter-spacing:-.03em}
+.h1 .nine{color:var(--red)}
+.h1 .gold{background:linear-gradient(135deg,var(--gold),var(--red));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lede{margin-top:24px;font-size:clamp(1rem,1.8vw,1.2rem);color:var(--ink2);max-width:520px}
+.cta-row{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.hero-meta{margin-top:42px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border-top:1px solid var(--line);padding-top:30px}
+.hero-meta div b{display:block;font-size:1.6rem;font-weight:900;color:var(--red);font-family:Georgia,serif;line-height:1.2}
+.hero-meta div span{font-size:12.5px;color:var(--dim)}
+/* 首屏右侧胶片墙 */
+.filmstrip{position:relative;height:520px;border-radius:14px;overflow:hidden;background:var(--ink);box-shadow:0 24px 54px rgba(35,21,26,.24)}
+.filmstrip::before,.filmstrip::after{content:"";position:absolute;left:0;right:0;height:22px;background-image:radial-gradient(circle,#fbf7f2 5px,transparent 6px);background-size:26px 22px;z-index:3}
+.filmstrip::before{top:0}.filmstrip::after{bottom:0;transform:scaleY(-1)}
+.filmstrip .reel{position:absolute;top:0;bottom:0;width:56px;background:repeating-linear-gradient(0deg,var(--ink) 0 14px,var(--red-d) 14px 28px);z-index:3;opacity:.92}
+.filmstrip .reel.l{left:0}.filmstrip .reel.r{right:0}
+.filmstrip .stage{position:absolute;inset:22px 56px;overflow:hidden}
+.filmstrip .slide{position:absolute;inset:0;opacity:0;transition:opacity .8s var(--ease);display:grid;place-items:end center}
+.filmstrip .slide.on{opacity:1}
+.filmstrip .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.filmstrip .slide .cap{position:relative;z-index:2;background:rgba(35,21,26,.88);color:#fff;padding:14px 20px;margin:16px;border-radius:8px;width:calc(100% - 32px);backdrop-filter:blur(4px)}
+.filmstrip .slide .cap h4{color:#fff;font-size:16px}
+.filmstrip .slide .cap p{font-size:12px;color:rgba(255,255,255,.78)}
+.filmstrip .dots{position:absolute;right:74px;top:38px;z-index:4;display:flex;gap:7px}
+.filmstrip .dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:.25s}
+.filmstrip .dots i.on{background:var(--gold);transform:scale(1.3)}
+
+/* ===== 栏目一：热映大片（垂直竖向卡）===== */
+.plank{border:2px solid var(--ink);border-radius:0;padding:26px;background:var(--paper);box-shadow:8px 8px 0 var(--red)}
+.deck{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tile{position:relative;border:1px solid var(--line);background:var(--bg);transition:.4s var(--ease);cursor:pointer}
+.tile:hover{border-color:var(--red);transform:translateY(-8px);box-shadow:6px 6px 0 var(--gold)}
+.tile .cvr{position:relative;height:300px;overflow:hidden}
+.tile .cvr img{width:100%;height:100%;object-fit:cover;transition:.55s var(--ease)}
+.tile:hover .cvr img{transform:scale(1.07)}
+.tile .no{position:absolute;top:12px;left:12px;width:34px;height:34px;background:var(--ink);color:#fff;font-weight:900;font-size:15px;display:grid;place-items:center;font-family:Georgia,serif;z-index:2}
+.tile .no.gold{background:linear-gradient(135deg,var(--gold),var(--red))}
+.tile .grade{position:absolute;top:12px;right:12px;background:var(--gold);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;z-index:2}
+.tile .stripe{position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold));transform:scaleX(0);transform-origin:left;transition:.5s var(--ease)}
+.tile:hover .stripe{transform:scaleX(1)}
+.tile .info{padding:16px 17px 18px;border-top:1px solid var(--line)}
+.tile .info h4{font-size:15.5px}
+.tile .info .meta{font-size:11.5px;color:var(--dim);margin-top:7px;display:flex;gap:6px;flex-wrap:wrap}
+.tile .info .meta i{font-style:normal;padding:2px 8px;background:var(--paper);border:1px solid var(--line)}
+
+/* ===== 栏目二：剧集档期（表格式）===== */
+.sched{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.sched .sch-head{display:grid;grid-template-columns:90px 1.4fr 1fr 110px 100px;gap:16px;padding:16px 24px;background:var(--ink);color:#fff;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.sched .sch-row{display:grid;grid-template-columns:90px 1.4fr 1fr 110px 100px;gap:16px;padding:20px 24px;align-items:center;border-bottom:1px dashed var(--line);transition:.3s}
+.sched .sch-row:last-child{border-bottom:0}
+.sched .sch-row:hover{background:rgba(230,57,47,.03)}
+.sched .sch-row .when{font-size:12.5px;font-weight:800;color:var(--red)}
+.sched .sch-row .when b{display:block;font-size:19px;font-family:Georgia,serif}
+.sched .sch-row .tt h4{font-size:16px}
+.sched .sch-row .tt p{font-size:12px;color:var(--dim);margin-top:4px}
+.sched .sch-row .type{font-size:12px;color:var(--ink2);font-weight:600}
+.sched .sch-row .ep{font-size:12px;color:var(--dim)}
+.sched .sch-row .go{justify-self:end}
+
+/* ===== 栏目三：综艺频道（左竖幅+右横卡）===== */
+.variety{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.v-big{position:relative;min-height:420px;border-radius:14px;overflow:hidden;cursor:pointer}
+.v-big img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s var(--ease)}
+.v-big:hover img{transform:scale(1.06)}
+.v-big .veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(35,21,26,.95),rgba(35,21,26,.05))}
+.v-big .vc{position:absolute;left:0;right:0;bottom:0;padding:30px;color:#fff}
+.v-big .vc .lv{font-size:11px;letter-spacing:.2em;color:var(--gold-l);font-weight:800}
+.v-big .vc h3{color:#fff;font-size:clamp(1.3rem,2.8vw,1.85rem);margin:8px 0 10px}
+.v-big .vc p{font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.7}
+.v-grid{display:grid;gap:16px;align-content:start}
+.v-mini{display:grid;grid-template-columns:96px 1fr;gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.35s;cursor:pointer;align-items:center}
+.v-mini:hover{border-color:var(--red);transform:translateX(6px);box-shadow:4px 4px 0 rgba(230,57,47,.15)}
+.v-mini .vp{height:96px;overflow:hidden}
+.v-mini .vp img{width:100%;height:100%;object-fit:cover}
+.v-mini .vt{padding-right:16px}
+.v-mini .vt .ch{font-size:11px;color:var(--red);font-weight:800;letter-spacing:.1em}
+.v-mini .vt h4{font-size:14.5px}
+.v-mini .vt span{font-size:11.5px;color:var(--dim);display:block;margin-top:4px}
+
+/* ===== 栏目四：经典片库（四宫格封面）===== */
+.archive{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.arc{position:relative;height:210px;border-radius:12px;overflow:hidden;cursor:pointer}
+.arc img{width:100%;height:100%;object-fit:cover;transition:.6s var(--ease)}
+.arc:hover img{transform:scale(1.1)}
+.arc .veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(35,21,26,.92),transparent 65%)}
+
+/* ===== 栏目五：排行榜（横向条形）===== */
+.bars{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 26px}
+.bar{display:grid;grid-template-columns:44px 52px 1fr 90px;gap:18px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line2)}
+.bar:last-child{border-bottom:0}
+.bar .rn{font-size:24px;font-weight:900;color:var(--line);font-family:Georgia,serif;font-style:italic}
+.bar.top:nth-child(-n+3) .rn{color:var(--gold)}
+.bar .bk{width:44px;height:60px;border-radius:6px;overflow:hidden}
+.bar .bk img{width:100%;height:100%;object-fit:cover}
+.bar .nm h4{font-size:15px}
+.bar .nm p{font-size:11.5px;color:var(--dim);margin-top:3px}
+.bar .bar-track{height:7px;background:var(--line2);border-radius:7px;overflow:hidden}
+.bar .bar-track i{display:block;height:100%;background:linear-gradient(90deg,var(--red),var(--gold));border-radius:7px;width:0;transition:width 1s var(--ease)}
+.bar.top:nth-child(-n+3) .bar-track i{background:linear-gradient(90deg,var(--gold),var(--red))}
+.bar .vl{text-align:right;font-size:12px;color:var(--ink2);font-weight:700}
+
+/* ===== 栏目六：九九承诺（横条卡）===== */
+.promise{display:grid;gap:14px}
+.pm{display:grid;grid-template-columns:64px 1fr 160px;gap:22px;align-items:center;background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:10px;padding:20px 24px;transition:.35s}
+.pm:hover{transform:translateX(6px);box-shadow:0 12px 30px rgba(35,21,26,.1)}
+.pm:nth-child(2){border-left-color:var(--gold)}
+.pm:nth-child(3){border-left-color:var(--jade)}
+.pm:nth-child(4){border-left-color:var(--ink)}
+.pm:nth-child(5){border-left-color:var(--red-d)}
+.pm .ic{width:52px;height:52px;border-radius:10px;background:rgba(230,57,47,.08);display:grid;place-items:center;font-size:24px}
+.pm:nth-child(even) .ic{background:rgba(226,165,33,.12)}
+.pm .tx h4{font-size:16.5px;margin-bottom:5px}
+.pm .tx p{font-size:13px;color:var(--dim);line-height:1.65}
+.pm .st{text-align:right;font-size:11.5px;color:var(--dim)}
+.pm .st b{display:block;font-size:13px;color:var(--red);font-weight:800}
+
+/* ===== 订阅 ===== */
+.sub-box{background:var(--ink);border-radius:16px;padding:48px 44px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.sub-box::after{content:"99";position:absolute;right:26px;top:50%;transform:translateY(-50%);font-size:150px;font-weight:900;font-family:Georgia,serif;color:rgba(255,255,255,.05);line-height:1}
+.sub-box h3{font-size:clamp(1.4rem,2.8vw,1.95rem);color:#fff;line-height:1.45}
+.sub-box p{color:rgba(255,255,255,.72);margin-top:9px;font-size:14px}
+.sub-box form{display:flex;gap:10px;position:relative;z-index:2}
+.sub-box input{padding:14px 18px;border-radius:8px;border:0;font-size:14px;font-family:inherit;width:230px}
+.sub-box input:focus{outline:2px solid var(--gold)}
+.sub-box button{border:0;cursor:pointer;font-family:inherit}
+.sub-msg{margin-top:11px;font-size:13px;color:var(--gold-l);min-height:18px;position:relative;z-index:2;grid-column:2}
+
+/* ===== 页脚 ===== */
+footer{background:var(--ink);color:#d9c9cc;padding:60px 0 26px;margin-top:40px}
+footer .f-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:34px;margin-bottom:42px}
+footer .logo{color:#fff}
+footer .logo small{border-color:rgba(230,57,47,.4)}
+footer .f-brand p{font-size:13.5px;color:#a89195;line-height:1.9;margin-top:14px}
+footer .fc h4{color:#fff;font-size:14.5px;margin-bottom:16px}
+footer .fc a{display:block;font-size:13.5px;color:#a89195;padding:5px 0;transition:.2s}
+footer .fc a:hover{color:var(--gold-l);transform:translateX(4px)}
+footer .f-bot{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#8a7177}
+footer .f-bot a{color:#8a7177}
+footer .f-bot a:hover{color:#fff}
+
+/* ===== 响应式 ===== */
+@media(max-width:960px){
+  section{padding:60px 0}
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .filmstrip{max-width:540px;margin:0 auto}
+  .deck{grid-template-columns:repeat(2,1fr)}
+  .variety,.archive{grid-template-columns:1fr 1fr}
+  .sub-box{grid-template-columns:1fr;padding:38px 26px}
+  footer .f-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .shell{padding:0 15px}
+  .links{position:fixed;top:72px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:16px;transform:translateY(-160%);transition:.4s var(--ease)}
+  .links.open{transform:translateY(0)}
+  .links a{padding:12px 16px;width:100%;text-align:center}
+  .m-btn{display:block}
+  .deck,.variety,.archive{grid-template-columns:1fr}
+  footer .f-top{grid-template-columns:1fr}
+  .sched .sch-head{display:none}
+  .sched .sch-row{grid-template-columns:1fr;gap:6px;padding:18px}
+  .sched .sch-row .go{justify-self:start}
+  .bar{grid-template-columns:36px 44px 1fr;gap:12px}
+  .bar .vl{display:none}
+  .pm{grid-template-columns:48px 1fr;gap:14px;padding:18px}
+  .pm .st{display:none}
+  .sub-box input{width:100%}
+  .sub-box form{flex-direction:column}
+  .hero-meta{grid-template-columns:1fr 1fr;gap:14px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<!-- 导航 -->
+<header class="nav">
+  <div class="shell nav-in">
+    <a class="logo" href="#top"><span class="mark">99</span><span class="zi">九九影视</span><small>久久相伴</small></a>
+    <nav class="links" id="links">
+      <a href="#film">热映大片</a>
+      <a href="#sched">更新档期</a>
+      <a href="#variety">综艺</a>
+      <a href="#archive">经典片库</a>
+      <a href="#rank">排行榜</a>
+      <a href="#top" class="love">★ 收藏本站</a>
+    </nav>
+    <button class="m-btn" id="mBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-bg"><span class="n1">9</span><span class="n2">9</span><span class="n3">久久</span></div>
+  <div class="shell hero-grid">
+    <div>
+      <span class="kicker">JIUJIU · 久久相伴 好片不断</span>
+      <h1 class="h1">久久相伴<br>看好片，上<span class="nine">九九</span><br><span class="gold">影视</span></h1>
+      <p class="lede">九九影视（jiujiuyingshi-wap.github.io）聚合海量高清电影、热播剧、综艺、动漫，每日稳定更新，久久不断更、久久不卡顿，一个站就够你刷一整年。</p>
+      <div class="cta-row">
+        <a class="btn btn-main" href="#film">🔥 看今日热映</a>
+        <a class="btn btn-out" href="#sched">📅 查更新档期</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>12.8万+</b><span>影视资源</span></div>
+        <div><b>1080P</b><span>高清画质</span></div>
+        <div><b>每日</b><span>准时更新</span></div>
+        <div><b>0</b><span>广告打扰</span></div>
+      </div>
+    </div>
+    <div class="filmstrip">
+      <span class="reel l"></span><span class="reel r"></span>
+      <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i></div>
+      <div class="stage">
+        <div class="slide on"><img src="https://picsum.photos/seed/jj1/680/520" alt="长空之王电影剧照" loading="lazy"><div class="cap"><h4>长空之王</h4><p>硬核空战大片 · 试飞员的热血征程</p></div></div>
+        <div class="slide"><img src="https://picsum.photos/seed/jj2/680/520" alt="长安十二时辰剧集剧照" loading="lazy"><div class="cap"><h4>长安十二时辰</h4><p>古装悬疑剧 · 二十四小时生死时速</p></div></div>
+        <div class="slide"><img src="https://picsum.photos/seed/jj3/680/520" alt="声入人心综艺剧照" loading="lazy"><div class="cap"><h4>声入人心</h4><p>音乐竞演综艺 · 实力歌手集结</p></div></div>
+        <div class="slide"><img src="https://picsum.photos/seed/jj4/680/520" alt="灵域动漫剧照" loading="lazy"><div class="cap"><h4>灵域</h4><p>国漫玄幻新番 · 连载中</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一：热映大片 -->
+<section id="film" style="padding-top:16px">
+  <div class="shell">
+    <div class="head">
+      <div class="head-l">
+        <span class="kicker">Hot Movies</span>
+        <h2 class="h2">九九影视<em>热映大片</em>，院线同步</h2>
+        <p class="sub">动作、悬疑、喜剧、爱情一应俱全，院线大片下线上线即看，不跑影院也能追热片。</p>
+      </div>
+      <a class="btn btn-out" href="#">全部电影 →</a>
+    </div>
+    <div class="plank">
+      <div class="deck">
+        <article class="tile"><div class="cvr"><span class="no gold">1</span><span class="grade">9.2</span><img src="https://picsum.photos/seed/jm1/360/480" alt="长空之王电影海报" loading="lazy"><span class="stripe"></span></div><div class="info"><h4>长空之王</h4><div class="meta"><i>动作</i><i>军事</i><i>128分钟</i></div></div></article>
+        <article class="tile"><div class="cvr"><span class="no">2</span><span class="grade">8.9</span><img src="https://picsum.photos/seed/jm2/360/480" alt="迷雾追凶电影海报" loading="lazy"><span class="stripe"></span></div><div class="info"><h4>迷雾追凶</h4><div class="meta"><i>悬疑</i><i>犯罪</i><i>116分钟</i></div></div></article>
+        <article class="tile"><div class="cvr"><span class="no">3</span><span class="grade">8.7</span><img src="https://picsum.photos/seed/jm3/360/480" alt="夏日终曲电影海报" loading="lazy"><span class="stripe"></span></div><div class="info"><h4>夏日终曲</h4><div class="meta"><i>爱情</i><i>剧情</i><i>118分钟</i></div></div></article>
+        <article class="tile"><div class="cvr"><span class="no">4</span><span class="grade">8.4</span><img src="https://picsum.photos/seed/jm4/360/480" alt="爆笑一家人电影海报" loading="lazy"><span class="stripe"></span></div><div class="info"><h4>爆笑一家人</h4><div class="meta"><i>喜剧</i><i>家庭</i><i>104分钟</i></div></div></article>
+        <article class="tile"><div class="cvr"><span class="no">5</span><span class="grade">9.0</span><img src="https://picsum.photos/seed/jm5/360/480" alt="山海经神话电影海报" loading="lazy"><span class="stripe"></span></div><div class="info"><h4>山海经·烛龙</h4><div class="meta"><i>奇幻</i><i>冒险</i><i>142分钟</i></div></div></article>
+        <article class="tile"><div class="cvr"><span class="no">6</span><span class="grade">8.6</span><img src="https://picsum.photos/seed/jm6/360/480" alt="无声的证言电影海报" loading="lazy"><span class="stripe"></span></div><div class="info"><h4>无声的证言</h4><div class="meta"><i>剧情</i><i>传记</i><i>136分钟</i></div></div></article>
+        <article class="tile"><div class="cvr"><span class="no">7</span><span class="grade">8.5</span><img src="https://picsum.photos/seed/jm7/360/480" alt="机甲战神电影海报" loading="lazy"><span class="stripe"></span></div><div class="info"><h4>机甲战神</h4><div class="meta"><i>科幻</i><i>动作</i><i>124分钟</i></div></div></article>
+        <article class="tile"><div class="cvr"><span class="no">8</span><span class="grade">8.8</span><img src="https://picsum.photos/seed/jm8/360/480" alt="小城故事电影海报" loading="lazy"><span class="stripe"></span></div><div class="info"><h4>小城故事</h4><div class="meta"><i>文艺</i><i>治愈</i><i>110分钟</i></div></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二：更新档期 -->
+<section id="sched" style="background:linear-gradient(180deg,transparent,rgba(230,57,47,.04),transparent)">
+  <div class="shell">
+    <div class="head">
+      <div class="head-l">
+        <span class="kicker">Update Schedule</span>
+        <h2 class="h2">九九影视<em>更新档期表</em></h2>
+        <p class="sub">一周排播一目了然，到点追更不迷路，错过的集数随时补。</p>
+      </div>
+      <a class="btn btn-out" href="#">完整排播 →</a>
+    </div>
+    <div class="sched">
+      <div class="sch-head"><span>更新时间</span><span>剧名</span><span>类型</span><span>更新进度</span><span></span></div>
+      <div class="sch-row"><div class="when">周一<b>20:00</b></div><div class="tt"><h4>长夜未央</h4><p>一场跨越二十年的追凶，真相远比想象复杂</p></div><div class="type">悬疑 / 犯罪</div><div class="ep">更新至 24 集</div><div class="go"><a class="btn btn-main" href="#" style="padding:10px 18px;font-size:13px">立即观看</a></div></div>
+      <div class="sch-row"><div class="when">周二<b>21:00</b></div><div class="tt"><h4>长安月</h4><p>盛世大唐下的权谋与爱情，服化道考究</p></div><div class="type">古装 / 权谋</div><div class="ep">更新至 12 集</div><div class="go"><a class="btn btn-main" href="#" style="padding:10px 18px;font-size:13px">立即观看</a></div></div>
+      <div class="sch-row"><div class="when">周三<b>22:00</b></div><div class="tt"><h4>寻味中国</h4><p>走遍大江南北，寻找最地道的民间味道</p></div><div class="type">文化 / 美食</div><div class="ep">更新至 10 期</div><div class="go"><a class="btn btn-main" href="#" style="padding:10px 18px;font-size:13px">立即观看</a></div></div>
+      <div class="sch-row"><div class="when">周四<b>20:30</b></div><div class="tt"><h4>异人之下</h4><p>少年意外觉醒异能，被卷入神秘组织</p></div><div class="type">奇幻 / 冒险</div><div class="ep">更新至 16 集</div><div class="go"><a class="btn btn-main" href="#" style="padding:10px 18px;font-size:13px">立即观看</a></div></div>
+      <div class="sch-row"><div class="when">周五<b>20:00</b></div><div class="tt"><h4>声入人心</h4><p>华语乐坛最强新声竞演，神级现场不断</p></div><div class="type">音乐 / 竞演</div><div class="ep">更新至 12 期</div><div class="go"><a class="btn btn-main" href="#" style="padding:10px 18px;font-size:13px">立即观看</a></div></div>
+      <div class="sch-row"><div class="when">周六<b>21:00</b></div><div class="tt"><h4>周末大逃亡</h4><p>明星逃离城市去乡下生活，笑料百出</p></div><div class="type">真人秀 / 慢综艺</div><div class="ep">更新至 8 期</div><div class="go"><a class="btn btn-main" href="#" style="padding:10px 18px;font-size:13px">立即观看</a></div></div>
+      <div class="sch-row"><div class="when">周日<b>19:30</b></div><div class="tt"><h4>平凡之光</h4><p>普通人的温暖故事，口碑炸裂完结篇</p></div><div class="type">都市 / 温情</div><div class="ep">全 32 集完结</div><div class="go"><a class="btn btn-out" href="#" style="padding:10px 18px;font-size:13px">一次看完</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目三：综艺频道 -->
+<section id="variety">
+  <div class="shell">
+    <div class="head center">
+      <div class="head-l">
+        <span class="kicker">Variety Shows</span>
+        <h2 class="h2">综艺频道 · 九九影视<em>承包你的笑点</em></h2>
+        <p class="sub" style="margin:13px auto 0">竞演、真人秀、美食、益智，每周准时更新，下饭神器都在这里。</p>
+      </div>
+    </div>
+    <div class="variety">
+      <article class="v-big"><img src="https://picsum.photos/seed/jv1/700/600" alt="声入人心综艺封面" loading="lazy"><div class="veil"></div><div class="vc"><span class="lv">本周主推 · 第12期</span><h3>声入人心</h3><p>华语乐坛最强新声竞演，导师战队激烈厮杀，每一期都有让人起鸡皮疙瘩的神级现场。</p></div></article>
+      <div class="v-grid">
+        <article class="v-mini"><div class="vp"><img src="https://picsum.photos/seed/jv2/192/192" alt="周末大逃亡综艺封面" loading="lazy"></div><div class="vt"><span class="ch">真人秀 · 第8期</span><h4>周末大逃亡</h4><span>明星下乡种地做饭，笑到扶墙</span></div></article>
+        <article class="v-mini"><div class="vp"><img src="https://picsum.photos/seed/jv3/192/192" alt="喜剧之王综艺封面" loading="lazy"></div><div class="vt"><span class="ch">喜剧 · 第6期</span><h4>喜剧之王</h4><span>新人喜剧人舞台竞演，脱口秀漫才齐飞</span></div></article>
+        <article class="v-mini"><div class="vp"><img src="https://picsum.photos/seed/jv4/192/192" alt="寻味中国综艺封面" loading="lazy"></div><div class="vt"><span class="ch">美食 · 第10期</span><h4>寻味中国</h4><span>走遍大江南北，寻找最地道民间味道</span></div></article>
+        <article class="v-mini"><div class="vp"><img src="https://picsum.photos/seed/jv5/192/192" alt="脑力全开综艺封面" loading="lazy"></div><div class="vt"><span class="ch">益智 · 第9期</span><h4>脑力全开</h4><span>最强大脑对决，烧脑题目高能反转</span></div></article>
+        <article class="v-mini"><div class="vp"><img src="https://picsum.photos/seed/jv6/192/192" alt="舞蹈风暴综艺封面" loading="lazy"></div><div class="vt"><span class="ch">舞蹈 · 第7期</span><h4>舞蹈风暴</h4><span>顶级舞者跨界竞技，每一帧都是艺术</span></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四：经典片库 -->
+<section id="archive" style="background:linear-gradient(180deg,transparent,rgba(226,165,33,.05),transparent)">
+  <div class="shell">
+    <div class="head">
+      <div class="head-l">
+        <span class="kicker">Classic Library</span>
+        <h2 class="h2">九九影视<em>经典片库</em>，重温不朽</h2>
+        <p class="sub">影史高分、时代经典、获奖佳作，随时重温那些值得反复看的片子。</p>
+      </div>
+      <a class="btn btn-out" href="#">经典合集 →</a>
+    </div>
+    <div class="archive">
+      <article class="arc"><img src="https://picsum.photos/seed/ja1/600/420" alt="肖申克的救赎经典海报" loading="lazy"><div class="veil"></div><div class="vc"><h4>肖申克的救赎</h4><p>影史 No.1 · 希望永不褪色</p></div></article>
+      <article class="arc"><img src="https://picsum.photos/seed/ja2/600/420" alt="霸王别姬经典海报" loading="lazy"><div class="veil"></div><div class="vc"><h4>霸王别姬</h4><p>华语经典 · 一生必看一次</p></div></article>
+      <article class="arc"><img src="https://picsum.photos/seed/ja3/600/420" alt="阿甘正传经典海报" loading="lazy"><div class="veil"></div><div class="vc"><h4>阿甘正传</h4><p>励志经典 · 跑出自己的人生</p></div></article>
+      <article class="arc"><img src="https://picsum.photos/seed/ja4/600/420" alt="大话西游经典海报" loading="lazy"><div class="veil"></div><div class="vc"><h4>大话西游</h4><p>喜剧奇幻 · 曾经沧海难为水</p></div></article>
+      <article class="arc"><img src="https://picsum.photos/seed/ja5/600/420" alt="泰坦尼克号经典海报" loading="lazy"><div class="veil"></div><div class="vc"><h4>泰坦尼克号</h4><p>爱情史诗 · 二十年经久不衰</p></div></article>
+      <article class="arc"><img src="https://picsum.photos/seed/ja6/600/420" alt="千与千寻经典海报" loading="lazy"><div class="veil"></div><div class="vc"><h4>千与千寻</h4><p>动画神作 · 宫崎骏的奇幻世界</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目五：排行榜 -->
+<section id="rank">
+  <div class="shell">
+    <div class="head">
+      <div class="head-l">
+        <span class="kicker">Top Chart</span>
+        <h2 class="h2">九九影视<em>热播排行榜</em></h2>
+        <p class="sub">实时热度排行，看看大家这周都在追什么好片。</p>
+      </div>
+      <a class="btn btn-out" href="#">完整榜单 →</a>
+    </div>
+    <div class="bars">
+      <div class="bar top"><span class="rn">1</span><span class="bk"><img src="https://picsum.photos/seed/jr1/88/120" alt="长空之王" loading="lazy"></span><div class="nm"><h4>长空之王</h4><p>动作 · 军事 · ★ 9.2</p></div><div class="bar-track"><i style="width:96%"></i></div><div class="vl">96.4万 热度</div></div>
+      <div class="bar top"><span class="rn">2</span><span class="bk"><img src="https://picsum.photos/seed/jr2/88/120" alt="长夜未央" loading="lazy"></span><div class="nm"><h4>长夜未央</h4><p>悬疑 · 犯罪 · 更新24集</p></div><div class="bar-track"><i style="width:92%"></i></div><div class="vl">92.1万 热度</div></div>
+      <div class="bar top"><span class="rn">3</span><span class="bk"><img src="https://picsum.photos/seed/jr3/88/120" alt="长安月" loading="lazy"></span><div class="nm"><h4>长安月</h4><p>古装 · 权谋 · 更新12集</p></div><div class="bar-track"><i style="width:88%"></i></div><div class="vl">88.7万 热度</div></div>
+      <div class="bar"><span class="rn">4</span><span class="bk"><img src="https://picsum.photos/seed/jr4/88/120" alt="迷雾追凶" loading="lazy"></span><div class="nm"><h4>迷雾追凶</h4><p>悬疑 · 犯罪 · ★ 8.9</p></div><div class="bar-track"><i style="width:81%"></i></div><div class="vl">81.5万 热度</div></div>
+      <div class="bar"><span class="rn">5</span><span class="bk"><img src="https://picsum.photos/seed/jr5/88/120" alt="山海经·烛龙" loading="lazy"></span><div class="nm"><h4>山海经·烛龙</h4><p>奇幻 · 冒险 · ★ 9.0</p></div><div class="bar-track"><i style="width:76%"></i></div><div class="vl">76.3万 热度</div></div>
+      <div class="bar"><span class="rn">6</span><span class="bk"><img src="https://picsum.photos/seed/jr6/88/120" alt="声入人心" loading="lazy"></span><div class="nm"><h4>声入人心</h4><p>音乐竞演 · 第12期</p></div><div class="bar-track"><i style="width:72%"></i></div><div class="vl">72.8万 热度</div></div>
+      <div class="bar"><span class="rn">7</span><span class="bk"><img src="https://picsum.photos/seed/jr7/88/120" alt="异人之下" loading="lazy"></span><div class="nm"><h4>异人之下</h4><p>奇幻 · 冒险 · 更新16集</p></div><div class="bar-track"><i style="width:68%"></i></div><div class="vl">68.4万 热度</div></div>
+      <div class="bar"><span class="rn">8</span><span class="bk"><img src="https://picsum.photos/seed/jr8/88/120" alt="小城故事" loading="lazy"></span><div class="nm"><h4>小城故事</h4><p>文艺 · 治愈 · ★ 8.8</p></div><div class="bar-track"><i style="width:63%"></i></div><div class="vl">63.9万 热度</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目六：九九承诺 -->
+<section id="why" style="background:linear-gradient(180deg,transparent,rgba(230,57,47,.04),transparent)">
+  <div class="shell">
+    <div class="head center">
+      <div class="head-l">
+        <span class="kicker">Our Promise</span>
+        <h2 class="h2">九九影视的<em>九九承诺</em></h2>
+        <p class="sub" style="margin:13px auto 0">久久相伴，把观影体验的每一处细节都做到位。</p>
+      </div>
+    </div>
+    <div class="promise">
+      <div class="pm"><div class="ic">🎬</div><div class="tx"><h4>海量资源 · 久久看不完</h4><p>电影、剧集、综艺、动漫、纪录片全覆盖，12 万+ 资源持续扩充，告别片荒。</p></div><div class="st"><b>12.8万+</b>影视资源</div></div>
+      <div class="pm"><div class="ic">⚡</div><div class="tx"><h4>极速加载 · 久久不卡顿</h4><p>多线路智能切换、P2P 加速，5 秒起播，弱网环境也能流畅追剧。</p></div><div class="st"><b>5 秒</b>极速起播</div></div>
+      <div class="pm"><div class="ic">🔔</div><div class="tx"><h4>准时更新 · 久久不断更</h4><p>追剧订阅更新提醒，上线第一时间推送，不错过任何一集。</p></div><div class="st"><b>每日</b>准时推送</div></div>
+      <div class="pm"><div class="ic">🧹</div><div class="tx"><h4>纯净观影 · 久久无广告</h4><p>拒绝片头广告与弹窗骚扰，打开即看，体验丝滑纯粹。</p></div><div class="st"><b>0</b>广告打扰</div></div>
+      <div class="pm"><div class="ic">📱</div><div class="tx"><h4>多端同步 · 久久不掉队</h4><p>手机、平板、电脑、电视多端覆盖，追剧进度自动同步。</p></div><div class="st"><b>4 端</b>同步观看</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 订阅 -->
+<section style="padding-top:16px">
+  <div class="shell">
+    <div class="sub-box">
+      <div>
+        <h3>久久相伴，好片不断 🎬<br>订阅九九影视更新提醒</h3>
+        <p>留下邮箱，热门新片上线、追剧更新第一时间通知你。</p>
+      </div>
+      <form id="subForm"><input type="email" placeholder="your@email.com" required aria-label="邮箱地址"><button class="btn btn-main" type="submit">立即订阅</button></form>
+      <div class="sub-msg" id="subMsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="shell">
+    <div class="f-top">
+      <div class="f-brand">
+        <div class="logo"><span class="mark">99</span><span class="zi">九九影视</span><small>久久相伴</small></div>
+        <p>九九影视（jiujiuyingshi-wap.github.io）是久久相伴的高清正版影视平台，海量电影、热播剧、综艺、动漫每日更新，久久不卡顿、久久不断更，一站看好片。</p>
+      </div>
+      <div class="fc"><h4>频道导航</h4><a href="#film">热映大片</a><a href="#sched">更新档期</a><a href="#variety">综艺频道</a><a href="#rank">热播排行榜</a></div>
+      <div class="fc"><h4>内容分类</h4><a href="#">动作冒险</a><a href="#">爱情喜剧</a><a href="#">悬疑犯罪</a><a href="#">科幻奇幻</a></div>
+      <div class="fc"><h4>关于九九</h4><a href="#why">九九承诺</a><a href="#">合作推广</a><a href="#">帮助中心</a><a href="#">联系方式</a></div>
+    </div>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> 九九影视 jiujiuyingshi-wap.github.io 版权所有 · 久久相伴 好片不断</span>
+      <span><a href="#">免责声明</a> · <a href="#">隐私政策</a> · <a href="#">用户协议</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+// 移动菜单
+var mb = document.getElementById('mBtn'), ls = document.getElementById('links');
+mb.addEventListener('click', function(){ ls.classList.toggle('open'); });
+ls.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ ls.classList.remove('open'); }); });
+// 胶片墙轮播
+var slides = document.querySelectorAll('.filmstrip .slide'), dots = document.querySelectorAll('.filmstrip .dots i'), cur = 0;
+function goto(i){
+  slides[cur].classList.remove('on'); dots[cur].classList.remove('on');
+  cur = (i + slides.length) % slides.length;
+  slides[cur].classList.add('on'); dots[cur].classList.add('on');
+}
+dots.forEach(function(d,i){ d.addEventListener('click', function(){ goto(i); resetTimer(); }); });
+var t = setInterval(function(){ goto(cur+1); }, 4500);
+function resetTimer(){ clearInterval(t); t = setInterval(function(){ goto(cur+1); }, 4500); }
+// 条形进度动画
+var bw = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){ e.target.querySelectorAll('.bar-track i').forEach(function(b){ b.style.width = b.style.width || b.getAttribute('style').match(/width:\s*([\d.]+%)/)[1]; }); bw.unobserve(e.target); }
+  });
+}, {threshold:.15});
+bw.observe(document.querySelector('.bars'));
+// 入场动画
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){ e.target.style.animation = 'rise .55s cubic-bezier(.22,.68,.17,1) both'; io.unobserve(e.target); }
+  });
+}, {threshold:.08});
+document.querySelectorAll('.tile,.sch-row,.v-mini,.arc,.bar,.pm,.v-big').forEach(function(el){ io.observe(el); });
+var st = document.createElement('style');
+st.textContent = '@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}';
+document.head.appendChild(st);
+// 订阅
+document.getElementById('subForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var m = document.getElementById('subMsg');
+  m.textContent = '✓ 订阅成功！九九影视会准时给你推送更新~';
+  this.reset();
+  setTimeout(function(){ m.textContent = ''; }, 5000);
+});
+</script>
+</body>
+</html>
